@@ -1,10 +1,16 @@
 import './App.css';
+import ItemForm from './components/ItemForm';
+import ItemList from './components/ItemList';
+import ItemSearch from './components/ItemSearch';
+import ItemValue from './components/ItemValue';
 
 function App() {
   return (
     <div className="app">
-      Hello world
-      <button className="button is-link">add</button>
+      <ItemForm />
+      <ItemSearch />
+      <ItemList />
+      <ItemValue />
     </div>
   );
 }
