@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { addItem } from '.';
 
 const formSlice = createSlice({
   name: 'formSlice',
@@ -13,6 +14,12 @@ const formSlice = createSlice({
     changeCost(state, action: PayloadAction<number>) {
       state.cost = action.payload;
     },
+  },
+  extraReducers(builder) {
+    builder.addCase(addItem, (state, action) => {
+      state.cost = 0;
+      state.name = '';
+    });
   },
 });
 

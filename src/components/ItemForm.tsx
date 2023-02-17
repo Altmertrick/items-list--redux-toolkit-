@@ -28,7 +28,7 @@ const ItemForm: React.FC<any> = () => {
       <form onSubmit={handleAddItem}>
         <div className="field-group">
           <div className="field">
-            <label className="label">Item Name</label>
+            <label className="label">Name</label>
             <input
               value={name}
               onChange={handleNameChange}
@@ -36,7 +36,7 @@ const ItemForm: React.FC<any> = () => {
             />
           </div>
           <div className="field">
-            <label className="label">Item Cost</label>
+            <label className="label">Cost</label>
             <input
               value={cost}
               onChange={handleCostChange}
