@@ -15,6 +15,12 @@ const store = configureStore({
   },
 });
 
+//@ts-ignore
+window.store = store;
+
 export { store };
 export { changeName, changeCost };
 export { changeSearchTerm, addItem, removeItem };
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
