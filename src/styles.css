@@ -50,7 +50,7 @@
   margin: 40px 20px;
 }
 
-.car-value {
+.items-value {
   font-size: 2rem;
   text-align: right;
 }
@@ -77,4 +77,8 @@ hr {
 .list-header .search .label {
   margin-bottom: 0px;
   margin-right: 15px;
+}
+
+.bold {
+  color: rgb(115, 115, 192);
 }

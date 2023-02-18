@@ -10,13 +10,15 @@ const ItemList: React.FC<any> = () => {
   // );
   //
   //'items' here is a 'derived state' (based on itemsData and searchTerm)
-  // to calculate piece of 'derived state' put calculating logic inside selector fn
+  // to calculate piece of 'derived state' put calculating logic inside a selector fn
   //As selector fn accepts state obj we can destructure state props that we need
-  const items = useSelector(
-    ({ items: { itemsData, searchTerm } }: RootState) => {
-      return itemsData.filter((item) =>
+  const { items, name } = useSelector(
+    ({ form, items: { itemsData, searchTerm } }: RootState) => {
+      const filteredItems = itemsData.filter((item) =>
         item.name.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
       );
+
+      return { items: filteredItems, name: form.name };
     }
   );
 
@@ -25,8 +27,11 @@ const ItemList: React.FC<any> = () => {
   };
 
   const renderedItems = items.map((item) => {
+    const isBold =
+      name && item.name.toLocaleLowerCase().includes(name.toLocaleLowerCase());
+
     return (
-      <div key={item.id} className="panel">
+      <div key={item.id} className={`panel ${isBold && 'bold'}`}>
         <p>
           {item.name} - ${item.cost}{' '}
         </p>
