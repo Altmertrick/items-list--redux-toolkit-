@@ -28,6 +28,11 @@
   margin-bottom: 0.75rem;
 }
 
+.items-list {
+  height: 70vh;
+  overflow-y: scroll;
+}
+
 .items-list .panel.bold {
   font-weight: 600;
 }
@@ -81,4 +86,10 @@ hr {
 
 .bold {
   color: rgb(115, 115, 192);
+}
+
+@media (max-width: 675px) {
+  .item-form .field-group {
+    flex-direction: column;
+  }
 }

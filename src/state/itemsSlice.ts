@@ -1,10 +1,16 @@
 import { createSlice, nanoid, PayloadAction } from '@reduxjs/toolkit';
 import { ItemT } from '../types';
 
+const initialItems = [
+  { id: 'asdfsdf998', name: 'Pen', cost: 1.6 },
+  { id: 'asdfsdf998', name: 'Backpack', cost: 38 },
+  { id: 'a9989zkjs', name: 'Keyboard', cost: 29 },
+];
+
 const itemsSlice = createSlice({
   name: 'items',
   initialState: {
-    itemsData: [] as Array<ItemT>,
+    itemsData: initialItems as Array<ItemT>,
     searchTerm: '',
   },
   reducers: {
